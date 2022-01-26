@@ -1,0 +1,31 @@
+GraphRequest request = GraphRequest.newMeRequest(
+        accessToken,
+        new GraphRequest.GraphJSONObjectCallback() {
+            @Override
+            public void onCompleted(
+                   JSONObject object,
+                   GraphResponse response) {
+                // Application code
+            }
+        });
+Bundle parameters = new Bundle();
+parameters.putString("fields", "id,name,link");
+request.setParameters(parameters);
+request.executeAsync();
+{
+  "id": "12345678", 
+  "birthday": "1/1/1950", 
+  "first_name": "Chris", 
+  "gender": "male", 
+  "last_name": "Colm", 
+  "link": "http://www.facebook.com/12345678", 
+  "location": {
+    "id": "110843418940484", 
+    "name": "Seattle, Washington"
+  }, 
+  "locale": "en_US", 
+  "name": "Chris Colm", 
+  "timezone": -8, 
+  "updated_time": "2010-01-01T16:40:43+0000", 
+  "verified": true
+}
